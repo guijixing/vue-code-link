@@ -1,7 +1,7 @@
 {
     "name": "@guijixing/vue-code-link",
     "version": "1.0.0",
-    "description": "",
+    "description": "点击元素快速在vscode中定位代码位置",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
