@@ -16,7 +16,7 @@ function getFilePath(element) {
 }
 
 function openFileInEditor(e) {
-  if (e.shiftKey && e.button === 0) {
+  if (e.shiftKey && e.button === 2) {
     e.preventDefault();
     const filePath = getFilePath(e.target);
     sendRequestToOpenFileInEditor(filePath);
@@ -26,12 +26,12 @@ function openFileInEditor(e) {
 function init() {
   if (process.env.NODE_ENV === 'development') {
     document.oncontextmenu = function (e) {
-      if (e.shiftKey && e.button === 0) {
+      if (e.shiftKey && e.button === 2) {
         return false;
       }
     };
     document.onmousedown = function (e) {
-      if (e.shiftKey && e.button === 0) {
+      if (e.shiftKey && e.button === 2) {
         e.preventDefault();
         openFileInEditor(e);
       }
