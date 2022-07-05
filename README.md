@@ -1,5 +1,6 @@
-## 通过 shift+右键点击页面元素,快速在 vscode 中定位代码位置 Vite
 
+## 通过 shift+右键点击页面元素,快速在 vscode 中定位代码位置 Vite
+![Animation](https://user-images.githubusercontent.com/22042837/177247094-17215a38-ddfa-4e7e-9758-47b2a052b263.gif)
 ## 引入
 ``` 
     // 引入只需如下三步
