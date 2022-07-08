@@ -13,8 +13,8 @@ module.exports = {
         .rule('vue-code-link')
         .test(/\.vue/).pre()
         .include.add(resolve('src')).end()
-        .use('@linzhinan/vue-code-link/add-location-loader')
-        .loader('@linzhinan/vue-code-link/add-location-loader')
+        .use('@guijixing/vue-code-link/add-location-loader')
+        .loader('@guijixing/vue-code-link/add-location-loader')
         .end()
     }
   }

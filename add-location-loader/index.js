@@ -1,16 +1,29 @@
 // 引入fs模块
 var fs = require('fs');
 const pathUtil = require("../utils/pathUtil.js")
-module.exports = function () {
-  return {
-    name: 'add-code-location',
-    transform(code, id) {
-      if (id.toString().endsWith(".vue")) {
-        return sourceCodeChange(code, id)
-      }
+module.exports = function (source) {
+  // webpack
+  if (source) {
+    const {
+      resourcePath
+    } = this;
+    return sourceCodeChange(source, resourcePath);
+  } else {
+    return {
+      name: 'add-code-location',
+      transform(code, id) {
+        try {
+          if (id.toString().endsWith(".vue")) {
+            return sourceCodeChange(code, id)
+          }
+        } catch (error) {
+          console.log(error)
+        }
 
+      }
     }
   }
+
 };
 
 function sourceCodeChange(source, resourcePath) {
