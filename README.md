@@ -24,7 +24,11 @@
                 ...
             ],
             ...
-            plugins:[...codePlugins,...]
+            plugins:[...codePlugins,...],
+            // vite版本全局中如获取不到process,可补充声明
+            define:{
+                'process.env': { NODE_ENV:process.env.VITE_USER_NODE_ENV }
+            }
             ...
         }
     }
