@@ -33,7 +33,7 @@ function codeLineTrack(str, resourcePath) {
 }
 
 function addLineAttr(lineStr, line, resourcePath, templateIndex) {
-  let reg = /(<[\w-]+)|(<\/template)/g;
+  let reg = /(<[^\d][\w-]+)|(<\/template)/g;
   let leftTagList = lineStr.match(reg);
   if (leftTagList) {
     leftTagList = Array.from(new Set(leftTagList));
