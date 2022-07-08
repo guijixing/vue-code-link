@@ -29,7 +29,7 @@
             define:{
                 'process.env': { NODE_ENV:process.env.VITE_USER_NODE_ENV }
             }
-            ...
+            ... 
         }
     }
 
