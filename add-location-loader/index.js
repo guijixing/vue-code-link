@@ -66,7 +66,10 @@ function addLineAttr(lineStr, line, resourcePath, templateIndex) {
       if (templateIndex.index > 0 && templateIndex.transition <= 0 && item && item.indexOf("template") == -1 && item.indexOf("transition") == -1 && !['<slot', '<script', '<RouterView', '<keep-alive'].includes(item)) {
         let regx = new RegExp(`${item}`, "g");
         let location = `${item} code-location="${resourcePath}:${line}"`;
-        lineStr = lineStr.replace(regx, location);
+        if (lineStr.indexOf("code-location") == -1) {
+          lineStr = lineStr.replace(regx, location);
+        }
+
       }
     });
   }
